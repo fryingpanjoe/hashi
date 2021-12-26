@@ -281,13 +281,13 @@ class Board:
 			self.OnMouseEvent(event)
 
 	def OnKeyEvent(self, event):
-		isDown = event.type is pygame.KEYDOWN
+		isDown = event.type == pygame.KEYDOWN
 		wasDown = event.key in self.keyDown and self.keyDown[event.key]
 		self.keyDown[event.key] = isDown
 		self.keyPressed[event.key] = wasDown and not isDown
 
 	def OnMouseEvent(self, event):
-		isDown = event.type is pygame.MOUSEBUTTONDOWN
+		isDown = event.type == pygame.MOUSEBUTTONDOWN
 		wasDown = event.button in self.buttonDown and self.buttonDown[event.button]
 		self.buttonDown[event.button] = isDown
 		self.buttonPressed[event.button] = wasDown and not isDown
